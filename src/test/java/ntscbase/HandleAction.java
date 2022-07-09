@@ -2,6 +2,7 @@ package ntscbase;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,23 +10,27 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.security.Key;
+import java.time.Duration;
+
 public class HandleAction {
     private WebDriver driver;
     private WebDriverWait wait;
 
     public HandleAction(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(this.driver , 5);
+        this.wait = new WebDriverWait(this.driver , 20);
     }
 
     public void setText(By elem, String text  ){
-        waitForPageLoad();
+        wait.until(ExpectedConditions.elementToBeClickable(elem));
         driver.findElement(elem).clear();
         driver.findElement(elem).sendKeys(text);
     }
 
-    public void click(By elem){
-        waitForPageLoad();
+    public void click(By elem) {
+//        waitForElemEnable(elem);
+        wait.until(ExpectedConditions.elementToBeClickable(elem));
         driver.findElement(elem).click();
     }
 
@@ -39,6 +44,11 @@ public class HandleAction {
         waitForPageLoad();
         Select select =  new Select(driver.findElement(elem));
         select.selectByValue(value);
+    }
+
+    public void waitForSeconds(int time) throws InterruptedException{
+        int i = time* 1000;
+        Thread.sleep(i);
     }
 
     public void waitForPageLoad() {
@@ -56,4 +66,5 @@ public class HandleAction {
             Assert.fail("Page load Timeout");
         }
     }
+
 }
