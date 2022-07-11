@@ -1,10 +1,12 @@
 package ntscpages;
 
+import ntscbase.BaseSetup;
 import ntscbase.HandleAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
-public class SignInPage {
+public class SignInPage  {
     // luu tru thuoc tinh va cac thao tac doi voi man hinh login
     private WebDriver driver;
     private HandleAction handle;
@@ -20,20 +22,15 @@ public class SignInPage {
         this.handle = new HandleAction(driver);
     }
 
-    public void Login(){
-//            Thread.sleep(2000);
-//            handle.waitForPageLoad();
+    public void Login(String tenancyName, String username, String password){
             // nhap ma dai ly
-            handle.setText(tenancyNameInput,"TBMT");
+            handle.setText(tenancyNameInput,tenancyName);
             // nhap userName
-            handle.setText(usernameInput, "TBMT_BACH");
+            handle.setText(usernameInput, username);
             //nhap password
-            handle.setText(passwordInput, "121200");
+            handle.setText(passwordInput, password);
             //click
             handle.click(loginBtn);
-
-
     }
-
 
 }

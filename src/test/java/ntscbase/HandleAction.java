@@ -28,6 +28,11 @@ public class HandleAction {
         driver.findElement(elem).sendKeys(text);
     }
 
+    public String getText(By elem){
+        wait.until(ExpectedConditions.elementToBeClickable(elem));
+        return driver.findElement(elem).getText();
+    }
+
     public void click(By elem) {
 //        waitForElemEnable(elem);
         wait.until(ExpectedConditions.elementToBeClickable(elem));
