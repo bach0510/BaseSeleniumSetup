@@ -8,22 +8,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class SignInTest extends BaseSetup {
     private WebDriver driver ;
     private WebDriverWait wait;
 
+
     @Test
-    public void LoginTest() throws Exception{
+    @Parameters({"tenancyName","username","password"})
+    public void LoginTest(String tenancyName ,String username, String password ) throws Exception{
         driver = getDriver();
 
         // khoi tao login page
         SignInPage signin = new SignInPage(driver);
 
-        String username = "admin";
-        String tenancyName = "TMV";
-        String password = "TmvMktNew@2021##";
+//        String username = "admin";
+//        String tenancyName = "TMV";
+//        String password = "TmvMktNew@2021##";
 
         signin.Login(tenancyName,username,password);
 

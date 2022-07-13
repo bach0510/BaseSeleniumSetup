@@ -1,10 +1,30 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" verbose="1">
-    <test name="StudySelenium">
-        <classes>
-            <class name="SeleniumTest">
+<suite name="lmao" verbose="1">
 
+    <test name="SiginTest1">
+        <classes>
+            <class name="ntsctestcases.SignInTest">
+                <parameter name="tenancyName" value="TMV"></parameter>
+                <parameter name="username" value="admin"></parameter>
+                <parameter name="password" value="TmvMktNew@2021##"></parameter>
+                <methods>
+                    <include name="LoginTest"></include>
+                </methods>
             </class>
         </classes>
     </test>
+
+    <test name="SiginTest2">
+        <classes>
+            <class name="ntsctestcases.SignInTest">
+                <parameter name="tenancyName" value="TMV"></parameter>
+                <parameter name="username" value="bách ngu"></parameter>
+                <parameter name="password" value="TmvMktNew@2021##"></parameter>
+                <methods>
+                    <include name="LoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
 </suite>

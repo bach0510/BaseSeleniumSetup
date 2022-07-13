@@ -43,7 +43,7 @@ public class BaseSetup {
 
     @AfterClass
     public void tearDown() throws  Exception{
-        Thread.sleep(2000);
+//        Thread.sleep(2000);
         driver.quit();
     }
 }
