@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -18,7 +19,7 @@ public class SignInTest extends BaseSetup {
 
     @Test
     @Parameters({"tenancyName","username","password"})
-    public void LoginTest(String tenancyName ,String username, String password ) throws Exception{
+    public void LoginTest(@Optional("TMV") String tenancyName ,@Optional String username,@Optional String password ) throws Exception{
         driver = getDriver();
 
         // khoi tao login page
@@ -27,6 +28,9 @@ public class SignInTest extends BaseSetup {
 //        String username = "admin";
 //        String tenancyName = "TMV";
 //        String password = "TmvMktNew@2021##";
+
+        Assert.assertFalse(username == null || username == "" , "username đang bị để trống");
+        Assert.assertFalse(password == null || password == "" , "password đang bị để trống");
 
         signin.Login(tenancyName,username,password);
 

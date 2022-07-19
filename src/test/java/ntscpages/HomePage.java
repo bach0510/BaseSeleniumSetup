@@ -1,6 +1,7 @@
 package ntscpages;
 
 import ntscbase.HandleAction;
+import ntscenum.Component;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,5 +24,11 @@ public class HomePage {
 
         String name = handle.getText(headerUserName);
         return  name;
+    }
+
+    public String openComponent(String tabCode){
+        By element = By.xpath("//a[@href='/abp/"+ tabCode +"']");
+        handle.click(element);
+        return null;
     }
 }
