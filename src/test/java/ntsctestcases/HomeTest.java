@@ -13,13 +13,15 @@ public class HomeTest extends BaseSetup {
     private WebDriver driver ;
 
     @Test
-    @Parameters({"tabCode"})
-    public void OpenComponent(String tabCode) throws Exception{
+    @Parameters({"tabName"})
+    public void OpenComponent(String tabName) throws Exception{
         driver = getDriver();
 
         // khoi tao home page
         HomePage home = new HomePage(driver);
+        var openedTabHeaders = home.GetAllActiveTabHeader();
+        Assert.assertFalse(openedTabHeaders.size() == 10 , "Hiện đã có 10 tab đã mở , không thể mở thêm tab");
 
-        home.openComponent(tabCode);
+        home.openComponent(tabName);
     }
 }

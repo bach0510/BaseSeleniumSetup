@@ -3,13 +3,12 @@ package ntscbase;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 
 public class BaseSetup {
-    private WebDriver driver;
+    private static WebDriver driver;
 
-    public WebDriver getDriver() {return driver;}
+    public static WebDriver getDriver() {return driver;}
 
     private void setDriver(String browserType , String url){
         switch (browserType){
@@ -32,16 +31,16 @@ public class BaseSetup {
         return newdriver;
     }
 
-    @BeforeClass
+    @BeforeTest
     public void setUpTestBase () throws Exception{
         try{
-            setDriver("chrome","https://mkt-fe.4seslife.com/");
+            setDriver("chrome","https://mkt-fe.4seslife.com/app/main/home");
         }catch (Exception e){
             System.out.println(e.getStackTrace());
         }
     }
 
-    @AfterClass
+    @AfterTest
     public void tearDown() throws  Exception{
 //        Thread.sleep(2000);
         driver.quit();

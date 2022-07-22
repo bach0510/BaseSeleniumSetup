@@ -27,10 +27,10 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="openElement">
+    <test name="openDashboardLeTan" >
         <classes>
             <class name="ntsctestcases.SignInTest">
-                <parameter name="tenancyName" value="TMV"></parameter>
+                <parameter name="tenancyName" value="TMD"></parameter>
                 <parameter name="username" value="admin"></parameter>
                 <parameter name="password" value="TmvMktNew@2021##"></parameter>
                 <methods>
@@ -38,7 +38,7 @@
                 </methods>
             </class>
             <class name="ntsctestcases.HomeTest">
-                <parameter name="tabCode" value="SERVICE_DASHBOARD_RECEPTIONIST"></parameter>
+                <parameter name="tabName" value="1. Dashboard Lễ tân"></parameter>
                 <methods>
                     <include name="OpenComponent"></include>
                 </methods>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="openElement"
+<testsuite name="openDashboardLeTan"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="12.089">
+           time="8.803">
     <properties></properties>
 
 
 
             <testcase
                 name="LoginTest"
-                time="12.089"
+                time="8.803"
                 classname="ntsctestcases.SignInTest">
             </testcase>
 </testsuite>
