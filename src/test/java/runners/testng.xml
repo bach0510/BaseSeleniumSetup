@@ -27,7 +27,7 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="openDashboardLeTan" >
+    <test name="Thông tin khách hàng" >
         <classes>
             <class name="ntsctestcases.SignInTest">
                 <parameter name="tenancyName" value="TMD"></parameter>
@@ -38,12 +38,31 @@
                 </methods>
             </class>
             <class name="ntsctestcases.HomeTest">
-                <parameter name="tabName" value="1. Dashboard Lễ tân"></parameter>
+                <parameter name="tabCode" value="SERVICE_QUOTATION_CUSTOMER_INFO"></parameter>
                 <methods>
                     <include name="OpenComponent"></include>
                 </methods>
             </class>
         </classes>
     </test>
+
+<!--    <test name="Cập nhật DL Kaizen/KPI " >-->
+<!--        <classes>-->
+<!--            <class name="ntsctestcases.SignInTest">-->
+<!--                <parameter name="tenancyName" value="TMD"></parameter>-->
+<!--                <parameter name="username" value="admin"></parameter>-->
+<!--                <parameter name="password" value="TmvMktNew@2021##"></parameter>-->
+<!--                <methods>-->
+<!--                    <include name="LoginTest"></include>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="ntsctestcases.HomeTest">-->
+<!--                <parameter name="tabCode" value="CRM_EM_KPI_UPDATE_SERVICE_DATA"></parameter>-->
+<!--                <methods>-->
+<!--                    <include name="OpenComponent"></include>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 </suite>

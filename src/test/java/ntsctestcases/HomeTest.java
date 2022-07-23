@@ -13,8 +13,8 @@ public class HomeTest extends BaseSetup {
     private WebDriver driver ;
 
     @Test
-    @Parameters({"tabName"})
-    public void OpenComponent(String tabName) throws Exception{
+    @Parameters({"tabCode"})
+    public void OpenComponent(String tabCode) throws Exception{
         driver = getDriver();
 
         // khoi tao home page
@@ -22,6 +22,9 @@ public class HomeTest extends BaseSetup {
         var openedTabHeaders = home.GetAllActiveTabHeader();
         Assert.assertFalse(openedTabHeaders.size() == 10 , "Hiện đã có 10 tab đã mở , không thể mở thêm tab");
 
-        home.openComponent(tabName);
+        String openedComponentName  = home.openComponent(tabCode);
+
+        Assert.assertTrue(openedComponentName.equals(home.GetActiveTabHeaderName()),"Tên component vừa mở không khớp");
+
     }
 }
